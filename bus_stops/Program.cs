@@ -19,9 +19,9 @@ namespace bus_stops
             {
 
                 Console.WriteLine("----");
-                Console.WriteLine("1. All");
+                Console.WriteLine("1. Add new bus");
                 Console.WriteLine("2. Search");
-                Console.WriteLine("3. Add new bus");
+                Console.WriteLine("3. All");
                 Console.WriteLine("4. Quit");
 
 
@@ -30,30 +30,27 @@ namespace bus_stops
                 switch (x)
                 {
                     case 1:
-                        bus.getAllTimes();
+                       
+                        Console.WriteLine("atvykimo laikas: ");
+                        String atv_time = Convert.ToString(Console.ReadLine());
+                        Console.WriteLine("išvykimo laikas: ");
+                        String isv_time = Convert.ToString(Console.ReadLine());
+                        bus.addBus(atv_time, isv_time);
 
+                        Console.WriteLine("Autobuso laikas sėkmingai pridėtas.");
                         break;
                     case 2:
                         bus.searchBus();
                         break;
                     case 3:
-                        Console.WriteLine("iveskite atvykimo laiką");
-                        String atv_time = Convert.ToString(Console.ReadLine());
-                        Console.WriteLine("Iveskite išvykimo laiką");
-                        String isv_time = Convert.ToString(Console.ReadLine());
-                        bus.addBus(atv_time, isv_time);
-
-                        Console.WriteLine("Pridėta");
+                        bus.getAllTimes();
 
                         break;
 
                     default:
-                        Console.WriteLine("tokio nera pasirinkimo");
+                        Console.WriteLine("Neįmanoma");
                         break;
                 }
-
-
-
             }
         }
     }
